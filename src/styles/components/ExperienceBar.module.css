@@ -1,3 +1,17 @@
+.headerChallenge {
+    margin-bottom: 0.625rem;
+    display: block;
+}
+
+.headerChallenge h1 {
+    color: var(--title);
+    border-bottom: 1px solid var(--gray-line);
+    margin-bottom: 15px;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;;
+}
+
 .experienceBar {
     display: flex;
     align-items: center;
@@ -14,6 +28,8 @@
     background-color: var(--gray-line);
     margin: 0 1.5rem;
     position: relative;
+    border: 1px solid var(--gray-line);
+    box-sizing: border-box;
 }
 
 .experienceBar > div > div {

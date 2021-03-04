@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
-import { CountdownContext } from '../contexts/CountdownContext';
-import styles from '../styles/components/Countdown.module.css';
+import { useContext } from 'react';
+import { CountdownContext } from '../../contexts/CountdownContext';
+import styles from './../../styles/components/Countdown.module.css';
 
-
-
-export function Countdown () {
+const Countdown: React.FC = () => {
     const { 
         minutes, 
         seconds, 
@@ -68,3 +66,5 @@ export function Countdown () {
         </div>
     );
 }
+
+export default Countdown;

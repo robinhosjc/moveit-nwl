@@ -1,7 +1,7 @@
 import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
-import { LevelUpModal } from '../components/LevalUpModal';
+import { LevelUpModal } from '../components/LevelUpModal';
 
 enum ChallengeType {
     'body', 
@@ -31,9 +31,9 @@ interface ChallengesProviderProps {
     challengesCompleted: number;
 }
 
-export const ChallengesContext = createContext({} as ChallengesContextData);
+const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
+function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
     const [level, setLevel] = useState(rest.level ?? 1);
     const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
     const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
@@ -134,3 +134,5 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
         </ChallengesContext.Provider>
     );
 }
+
+export { ChallengesContext, ChallengesProvider };

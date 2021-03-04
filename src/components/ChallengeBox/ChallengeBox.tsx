@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { ChallengesContext } from '../contexts/ChallengesContext';
-import { CountdownContext } from '../contexts/CountdownContext';
-import styles from '../styles/components/ChallengeBox.module.css';
+import { ChallengesContext } from '../../contexts/ChallengesContext';
+import { CountdownContext } from '../../contexts/CountdownContext';
+import styles from './../../styles/components/ChallengeBox.module.css';
 
-export function ChallengeBox () {
+const ChallengeBox: React.FC = () => {
     const { activeChallenge, resetChallenge, completedChallenge } = useContext(ChallengesContext);
     const { resetCountdown } = useContext(CountdownContext);
 
@@ -24,7 +24,7 @@ export function ChallengeBox () {
                     <header>Ganhe {activeChallenge.amount} xp</header>
 
                     <main>
-                        <img src={`icons/${activeChallenge.type}.svg`} alt=""/>
+                        <img src={`/icons/${activeChallenge.type}.svg`} alt=""/>
                         <strong>Novo desafio</strong>
                         <p>{activeChallenge.description}</p>
                     </main>
@@ -52,7 +52,7 @@ export function ChallengeBox () {
                         Finalize um ciclo para receber um desafio!
                     </strong>
                     <p>
-                        <img src="icons/level-up.svg" alt="Level Up"/>
+                        <img src="/icons/level-up.svg" alt="Level Up"/>
                         Avance de level completando desafios.
                     </p>
                 </div>
@@ -60,3 +60,5 @@ export function ChallengeBox () {
         </div>
     );
 }
+
+export default ChallengeBox;
